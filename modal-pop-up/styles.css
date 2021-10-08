@@ -19,78 +19,106 @@
 
 html {
     font-size: 10px;
-}
-
-body {
     font-family: 'Open Sans', sans-serif;
 }
 
-p {
-    /* 1.6*10px = 16px for p's font size */
-    font-size: 1.6rem; 
-    line-height: 1.5;
-}
-
-img {
-    width: 100%;
-}
-
-/* container class */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
+body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: lightblue;
     height: 100vh;
 }
 
-.counter-div {
-    width: 40rem;
-    border: 1px solid var(--grey);
-    padding: 1rem;
-    background-color: var(--light-blue);
-    color: var(--white);
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+header {
     text-align: center;
-    border-radius: 5px;
+    color: white;
+    padding-bottom: 3rem;
 }
 
-.counter-div > * {
-    margin-bottom: 2rem;
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1;
 }
 
-.count {
-    font-size: 4rem;
-    border: 1px solid var(--white);
-    padding: 0 1rem;
-}
-
-.buttons button {
-    padding: 1rem;
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    border: none;
-    outline: none;
-    /* to give the rounded corners for the buttons */
-    border-radius: 3px;
-    color: var(--white);
-    /* to bold the words inside the buttons */
+header h1 span {
     font-weight: 700;
-    /* will display the mini hand when cursor is on the button*/
+}
+
+section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+     padding-bottom: 1rem;
+}
+
+form button {
+    outline: none;
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: all .3s;
     cursor: pointer;
 }
 
-/* targeting the individual button */
-button.subtract {
-    background-color: orangered;
+form button:hover {
+    background-color: var(--color-sec);
 }
 
-button.reset {
-    background-color: var(--white);
-    color: var(--black);
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
 }
 
-button.add {
-    background-color: green
+.modal-content {
+    width: 80%;
+    max-width: 60rem;
+    background-color: var(--grey);
+    margin: 15% auto;
+    padding: 2rem;
+    border: 1px solid #777;
+    text-align: center;
+    animation: slide ease 0.8s;
+}
+
+@keyframes slide {
+    0% {
+        /* to take the modal out of page */
+        transform: translateY(-30rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: var(--color-primary);
+    font-size: 2rem;
+    cursor: pointer;
 }

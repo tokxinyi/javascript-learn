@@ -1,14 +1,23 @@
-const hex = document.querySelector(".hex");
-const btn = document.querySelector(".generate");
+// variables
+const modal = document.querySelector(".modal"),
+        btn = document.querySelector(".btn"),
+        close = document.querySelector(".close");
 
-// when is it arrow function and when is it not?
-const generateColour = () => {
-    const randomColour = Math.random().toString(16).substring(2,8);
-    document.body.style.backgroundColor = "#" + randomColour;
-    hex.innerHTML = "#" + randomColour; // to update the colour code = current background colour
-};
+btn.addEventListener("click", openModal);
+close.addEventListener("click", closeModal);
+// when clicking on the modal container, it will close the modal
+modal.addEventListener("click", closeModal);
 
-// add an event listener
-btn.addEventListener("click", generateColour);
+// open the modal
+function openModal(e) {
+    // default behaviour of a button in the form will refresh the page when the button is clicked
+    // this method prevents that default behaviour from happening
+    e.preventDefault();
+    modal.style.display = "block";
+}
 
-generateColour();
+// close modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
