@@ -17,8 +17,11 @@ const name = () => {
 
 ```
 Arrow function is a new feature that is a more consise syntax for writing function expressions.
+
 Arrow function cannot be used as a constructor. Cannot use `new` keyword.
+
 Cannot have duplicated name parameters, whether in strict or non-strict mode.
+
 Arrow functions are anonymous = not named
 - Makes it harder to debug (because you don't know where is the function called)
 - No self-referencing (e.g. recursion)
