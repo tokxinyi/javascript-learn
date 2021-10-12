@@ -23,6 +23,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-blue);
 }
 
 p {
@@ -40,4 +41,45 @@ img {
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pal {
+    width: 40rem;
+    background-color: var(--white);
+    padding: 5rem 3rem;
+    border-radius: 5px;
+}
+
+/* targeting the direct children of class pal, which will include the input, button and results */
+.pal > * {
+    border: none;
+    outline: none;
+    padding: 1rem 5px;
+}
+
+.input-text {
+    width: 70%;
+    border-bottom: 2px solid var(--color-sec);
+}
+
+button {
+    width: 25%;
+    border-radius: 5px; 
+    color: var(--white);
+    background-color: var(--color-primary);
+}
+
+p.result {
+    margin-top: 3.5rem;
+    text-align: center;
+    font-weight: 800;
+    color: var(--dark-grey);
 }
